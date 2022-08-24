@@ -12,13 +12,15 @@ namespace FSE.SkillTracker.Application.Validators
                 //.Cascade(CascadeMode.Stop)
                 .NotNull()
                 .Length(5, 30)
-                .WithMessage("{PropertyName} should be all letters.");
+                .WithMessage("{PropertyName} must have only characters.");
 
             RuleFor(x => x.AssociateId)
                 //.Cascade(CascadeMode.Stop)
                 .NotNull()
                 .Length(5, 30)
-                .Must(x => x.StartsWith("CTS"));
+                .Must(x => x.StartsWith("CTS"))
+                .WithMessage("{PropertyName} must starts with CTS.");
+                
 
             RuleFor(x => x.Email)
                 .Cascade(CascadeMode.Stop)
