@@ -16,7 +16,8 @@
 
     public class SkillExpertise
     {
-        public Guid SkillId { get; set; }
+        //public Guid SkillId { get; set; }
+        public string? SkillName { get; set; }
         public int Expertise { get; set; }
     }
 }

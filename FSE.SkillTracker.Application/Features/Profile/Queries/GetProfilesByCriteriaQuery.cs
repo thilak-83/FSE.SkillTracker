@@ -22,7 +22,7 @@ namespace FSE.SkillTracker.Application.Features.Profile.Queries
 
             public async Task<List<Domain.Entities.Profile>> Handle(GetProfilesByCriteriaQuery request, CancellationToken cancellationToken)
             {
-                var profiles = await _profileRepository.GetItemsAsync(new Specifications.ProfileSpecification());
+                var profiles = await _profileRepository.GetItemsAsync(new Specifications.ProfileSpecification(request));
                 return profiles.ToList();
             }
         }

@@ -22,7 +22,7 @@ namespace FSE.SkillTracker.Application.Features.Profile.Commands
 
             public async Task<Domain.Entities.Profile> Handle(UpdateProfileCommand request, CancellationToken cancellationToken)
             {
-                var profile = await _profileRepository.GetItemAsync(request.UserId.ToString(), "Sudheer");
+                var profile = await _profileRepository.GetItemAsync(request.UserId.ToString(), "RajThilak");
                 if (profile == null)
                 {
                     throw new UserNotFoundException(request.UserId);
